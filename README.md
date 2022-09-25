@@ -47,6 +47,53 @@ g++ -v
 make -v
 ```
 
+### Installation (macOS 12.6, Apple Silicon)
+The instructions on the official Jekyll website may or may not work depending on your setup.
+
+The instructions outlined in this section works on an Apple Silicon machine.
+
+The instructions were adapted from [https://utpalkumar.medium.com/how-to-install-jekyll-on-apple-m1-macbook-c87894b7fc70](https://utpalkumar.medium.com/how-to-install-jekyll-on-apple-m1-macbook-c87894b7fc70).
+
+Note that it is assumed that the Command Line Developer Tools from Xcode have already been installed.
+
+First, install a Ruby version compatible with the ARM processor.  Note that `rbenv` does not come with the `install` command by default.  The package `ruby-build` will add the `install` command to `rbenv`.
+```sh
+# Homebrew
+brew install rbenv ruby-build
+# MacPorts
+sudo port install rbenv ruby-build
+```
+
+Next, install an ARM-based version of Ruby.  As of the time of writing, version 3.1.2 is the current stable version:
+```sh
+rbenv install 3.1.2  # takes some time
+rbenv global 3.1.2
+```
+
+Next, add `rbenv` to your shell so that it loads every time a terminal window is opened:
+```sh
+# ZSH
+echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
+# Bash
+echo 'eval "$(rbenv init - bash)"' >> ~/.bash_profile
+```
+
+Then close your terminal and open it again, entering the following commands in the new session:
+```sh
+ruby -v
+rbenv rehash
+```
+
+`ruby -v` should show the version of Ruby you have installed, e.g.:
+```sh
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [arm64-darwin21].
+```
+
+Finally, install Jekyll and Bundler:
+```sh
+gem install bundler jekyll
+```
+
 ### Installation (Ubuntu 22.04 LTS)
 Install the prerequisites:
 ```sh
@@ -86,7 +133,7 @@ bundle exec jekyll b
 ### Serve
 Finally, the website can be served on one's computer with the following command:
 ```sh
-bundle exec jekyll serve`
+bundle exec jekyll serve
 ```
 
 Optionally, one can use the shorthand `s` subcommand instead of `server`:
