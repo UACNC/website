@@ -59,7 +59,7 @@ Note that it is assumed that the Command Line Developer Tools from Xcode have al
 First, install a Ruby version compatible with the ARM processor.  Note that `rbenv` does not come with the `install` command by default.  The package `ruby-build` will add the `install` command to `rbenv`.
 ```sh
 # Homebrew
-brew install rbenv ruby-build
+brew install rbenv
 # MacPorts
 sudo port install rbenv ruby-build
 ```
