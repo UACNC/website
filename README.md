@@ -39,7 +39,8 @@ ruby -v
 # RubyGems
 gems -v
 
-# GNU Compiler Collection (GCC)
+# C++ Compiler, such as GNU Compiler Collection (GCC)
+# (on macOS, the commands below may use Apple Clang instead)
 gcc -v
 g++ -v
 
