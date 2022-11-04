@@ -48,7 +48,7 @@ g++ -v
 make -v
 ```
 
-### Installation (macOS 12.6, Apple Silicon)
+### Installation (macOS, Apple Silicon)
 The instructions on the official Jekyll website may or may not work depending on your setup.
 
 The instructions outlined in this section works on an Apple Silicon machine.
